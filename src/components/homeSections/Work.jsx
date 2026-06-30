@@ -186,7 +186,7 @@ const HomePortfolioPreview = () => {
             animate={inView ? 'visible' : 'hidden'}
             className="text-sm md:text-base text-text-light max-w-xs leading-relaxed sm:text-right"
           >
-            Every project here is a story of a brand that wanted to grow — and did.
+            Every project here is a story of a brand that wanted to grow and did.
           </motion.p>
         </div>
 

@@ -147,7 +147,7 @@ const Hero = () => {
           className="text-lg md:text-xl text-text-light max-w-2xl mx-auto mb-8 leading-relaxed"
           variants={itemVariants}
         >
-          Built for startups. Designed for growth. We craft brands, visuals, and AI-powered strategies that stop the scroll — and convert attention into real revenue.
+          Built for startups. Designed for growth. We craft brands, visuals, and AI powered strategies that stop the scroll and convert attention into real revenue.
         </motion.p>
 
         {/* Buttons */}

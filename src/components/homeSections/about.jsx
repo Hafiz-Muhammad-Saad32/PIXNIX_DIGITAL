@@ -35,13 +35,13 @@ const AboutSection = () => {
   const values = [
     {
       icon: '🎨',
-      title: 'Design-Led Thinking',
-      description: 'We start every project with deep creative thinking — not templates. Your brand gets a strategy and visual identity built from scratch.'
+      title: 'Design Led Thinking',
+      description: 'We start every project with deep creative thinking not templates. Your brand gets a strategy and visual identity built from scratch.'
     },
     {
       icon: '🤖',
-      title: 'AI-Powered Advantage',
-      description: 'We use the latest AI tools — from automation to intelligent agents — to give your brand an unfair competitive edge.'
+      title: 'AI Powered Advantage',
+      description: 'We use the latest AI tools from automation to intelligent agents to give your brand an unfair competitive edge.'
     },
     {
       icon: '📈',
@@ -50,8 +50,8 @@ const AboutSection = () => {
     },
     {
       icon: '🤝',
-      title: 'Long-Term Partnerships',
-      description: 'We don\'t just deliver a project and disappear. We build relationships — your wins are our wins.'
+      title: 'Long Term Partnerships',
+      description: 'We don\'t just deliver a project and disappear. We build relationships your wins are our wins.'
     }
   ]
 
@@ -83,10 +83,10 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Pixnix Digital is a Karachi-based creative agency founded on one belief: great brands don't happen by accident. We're a tight-knit team of designers, strategists, developers, and AI specialists who obsess over every pixel, every word, and every result.
+                Pixnix Digital is a Karachi based creative agency founded on one belief: great brands don't happen by accident. We're a tight knit team of designers, strategists, developers, and AI specialists who obsess over every pixel, every word, and every result.
 
                 <br /><br />
-                We work with startups, small businesses, and ambitious brands that want to look premium, grow fast, and stand out in a crowded market. Our edge? We combine human creativity with AI-powered tools to deliver work that's not just beautiful — it's effective.
+                We work with startups, small businesses, and ambitious brands that want to look premium, grow fast, and stand out in a crowded market. Our edge? We combine human creativity with AI powered tools to deliver work that's not just beautiful it's effective.
               </motion.p>
 
               <motion.button

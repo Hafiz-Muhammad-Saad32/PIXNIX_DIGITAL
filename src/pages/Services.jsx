@@ -26,7 +26,7 @@ const Services = () => {
 
           <p className="text-text-light text-lg leading-relaxed">
             We cover the full creative and digital stack.
-            One agency, every solution — no need to shop around.
+            One agency, every solution no need to shop around.
           </p>
 
         </div>
@@ -142,7 +142,7 @@ const Services = () => {
             </h2>
 
             <p className="text-text-light max-w-2xl mx-auto mb-8">
-              Tell us about your brand and goals —
+              Tell us about your brand and goals 
               we'll map out exactly what will move
               the needle for you.
             </p>

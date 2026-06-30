@@ -48,7 +48,7 @@ const Contact = () => {
     },
     {
       q: "What's your pricing like?",
-      a: "Every project is custom-priced based on your needs and scope. We offer packages for all budgets — from startups to established brands. Reach out and we'll give you a clear quote within 24 hours."
+      a: "Every project is custom-priced based on your needs and scope. We offer packages for all budgets from startups to established brands. Reach out and we'll give you a clear quote within 24 hours."
     },
     {
       q: "Do you offer revisions?",
@@ -76,7 +76,7 @@ const Contact = () => {
             </h2>
 
             <p className="text-text-light max-w-2xl mx-auto">
-              Have a project in mind? Want to know what's possible for your brand? Drop us a message — we respond fast.
+              Have a project in mind? Want to know what's possible for your brand? Drop us a message we respond fast.
             </p>
           </div>
         </ScrollReveal>
@@ -265,7 +265,7 @@ const Contact = () => {
           <div className="card-base p-6 rounded-xl border border-border-secondary flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h4 className="font-black text-xl">Like What You See?</h4>
-              <p className="text-text-light text-sm">Let's create something just as powerful — or better — for your brand.</p>
+              <p className="text-text-light text-sm">Let's create something just as powerful or better for your brand.</p>
             </div>
 
             <div className="flex gap-3">

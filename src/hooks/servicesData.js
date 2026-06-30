@@ -6,7 +6,7 @@ export const services = [
     subtitle: "Visuals That Stop the Scroll",
     category: "Creative",
     description:
-      "From social media graphics to full marketing collateral — we design with purpose. Every visual we create is built to grab attention, communicate clearly, and represent your brand at its absolute best.",
+      "From social media graphics to full marketing collateral we design with purpose. Every visual we create is built to grab attention, communicate clearly, and represent your brand at its absolute best.",
     includes: [
       "Social media post & story design",
       "Marketing banners & flyers",
@@ -22,7 +22,7 @@ export const services = [
     subtitle: "Build a Brand, Not Just a Logo",
     category: "Creative",
     description:
-      "Your brand is how the world perceives you before you even speak. We craft complete brand identities — from the logo to the language — that make you instantly recognizable and deeply memorable.",
+      "Your brand is how the world perceives you before you even speak. We craft complete brand identities from the logo to the language that make you instantly recognizable and deeply memorable.",
     includes: [
       "Logo design (primary + variations)",
       "Brand color palette & typography system",
@@ -38,7 +38,7 @@ export const services = [
     subtitle: "Content That Grows Your Brand on Autopilot",
     category: "Marketing",
     description:
-      "Consistent, scroll-stopping content is the difference between a brand that grows and one that stagnates.",
+      "Consistent, scroll stopping content is the difference between a brand that grows and one that stagnates.",
     includes: [
       "Monthly content calendar & strategy",
       "Post design",
@@ -57,7 +57,7 @@ export const services = [
       "We build custom AI automations that streamline operations, reduce costs, and free up your time.",
     includes: [
       "Lead capture & CRM automation",
-      "Email & follow-up sequences",
+      "Email & follow up sequences",
       "Social media scheduling automation",
       "Invoice & reporting automation",
       "Custom workflow builds"
@@ -102,7 +102,7 @@ export const services = [
     subtitle: "Websites That Work as Hard as You Do",
     category: "Development",
     description:
-      "Fast, beautiful and conversion-focused websites that generate leads and build trust.",
+      "Fast, beautiful and conversion focused websites that generate leads and build trust.",
     includes: [
       "Custom website development",
       "Landing pages",

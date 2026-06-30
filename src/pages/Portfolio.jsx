@@ -324,30 +324,6 @@ const Portfolio = () => {
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* ── Back nav ── */}
-        <motion.div
-          initial={{ opacity: 0, x: -12 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="mb-12 md:mb-16"
-        >
-          <button
-            onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-text-light hover:text-white transition-colors duration-200 group"
-            aria-label="Go back"
-          >
-            <motion.span
-              className="inline-flex"
-              initial={{ x: 0 }}
-              whileHover={{ x: -3 }}
-              transition={{ duration: 0.2 }}
-            >
-              <IconArrowLeft />
-            </motion.span>
-            Back to Home
-          </button>
-        </motion.div>
-
         {/* ── Header ── */}
         <div ref={headerRef} className="mb-14 md:mb-18">
           <motion.p
@@ -377,7 +353,7 @@ const Portfolio = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-base md:text-lg text-text-light max-w-2xl leading-relaxed"
           >
-            Every project here is a story of a brand that wanted to grow — and did. Here's a look at what we've built.
+            Every project here is a story of a brand that wanted to grow and did. Here's a look at what we've built.
           </motion.p>
         </div>
 
@@ -454,7 +430,7 @@ const Portfolio = () => {
               Like What You See?
             </p>
             <h2 className="font-black text-3xl md:text-4xl text-white mb-6">
-              Let's create something just as <br /><span className="gradient-text-teal">powerful — or better — for your brand.</span>
+              Let's create something just as <br /><span className="gradient-text-teal">powerful or better for your brand.</span>
             </h2>
             <a
               href="/contact"

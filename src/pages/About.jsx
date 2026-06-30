@@ -92,15 +92,15 @@ const About = () => {
   const values = [
     {
       icon: '🎨',
-      title: 'Design-Led Thinking',
+      title: 'Design Led Thinking',
       description:
-        'We start every project with deep creative thinking — not templates. Your brand gets a strategy and visual identity built from scratch.'
+        'We start every project with deep creative thinking not templates. Your brand gets a strategy and visual identity built from scratch.'
     },
     {
       icon: '🤖',
-      title: 'AI-Powered Advantage',
+      title: 'AI Powered Advantage',
       description:
-        'We use the latest AI tools — from automation to intelligent agents — to give your brand a real competitive edge.'
+        'We use the latest AI tools from automation to intelligent agents to give your brand a real competitive edge.'
     },
     {
       icon: '📈',
@@ -110,7 +110,7 @@ const About = () => {
     },
     {
       icon: '🤝',
-      title: 'Long-Term Partnerships',
+      title: 'Long Term Partnerships',
       description:
         "We don't just deliver a project and disappear. We build relationships and grow with our clients."
     }
@@ -188,13 +188,13 @@ const About = () => {
             mx-auto
           "
             >
-              Pixnix Digital is a Karachi-based creative agency founded on one belief:
+              Pixnix Digital is a Karachi based creative agency founded on one belief:
               great brands don't happen by accident.
 
               <br />
               <br />
 
-              We're a tight-knit team of designers,
+              We're a tight knit team of designers,
               strategists, developers, and AI specialists
               who obsess over every pixel, every word,
               and every result.
@@ -208,8 +208,8 @@ const About = () => {
               crowded market.
 
               Our edge? We combine human creativity
-              with AI-powered tools to deliver work
-              that's not just beautiful — it's effective.
+              with AI powered tools to deliver work
+              that's not just beautiful it's effective.
             </p>
           </div>
         </ScrollReveal>
@@ -311,9 +311,9 @@ const About = () => {
             mt-4
           "
             >
-              Small Team.
+              Small Team,
               <span className="gradient-text-pink">
-                {' '}Big Impact.
+                {' '}Big Impact
               </span>
             </h3>
 
@@ -327,8 +327,8 @@ const About = () => {
             >
               We're a lean, focused team of creative
               professionals who care deeply about the
-              work we put out. No bloated agency overhead
-              — just talented people fully invested in
+              work we put out. No bloated agency overhead 
+              just talented people fully invested in
               your brand's success.
             </p>
 
@@ -392,7 +392,7 @@ const About = () => {
             mb-8
           "
             >
-              Let's jump on a quick call —
+              Let's jump on a quick call
               no pressure, just vibes and good ideas.
             </p>
 
