@@ -104,7 +104,7 @@ const AboutSection = () => {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 />
-                <span className="relative z-10">View Details</span>
+                <a href='/about' className="relative z-10">View Details</a>
               </motion.button>
             </div>
           </ScrollReveal>

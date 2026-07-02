@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import FloatingMesh from '../animations/FloatingMesh'
@@ -116,8 +117,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen mt-10 flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pb-0"
+      className="bg-[url('/img/bg.png')] relative z-10 h-full bg-cover bg-centerrelative min-h-screen mt-10 flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pb-0"
     >
+      <div className="absolute inset-0 bg-black/50"></div>
       {/* Content */}
       <motion.div
         className="relative z-10 max-w-full md:max-w-4xl mx-auto text-center px-4 sm:px-6 md:px-8"
@@ -175,7 +177,7 @@ const Hero = () => {
           <FloatingStats
             key={i}
             stat={stat}
-            delay={i * 0.1}
+            delay={i * 1}
           />
         ))}
       </div>

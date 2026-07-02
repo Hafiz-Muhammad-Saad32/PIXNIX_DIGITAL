@@ -12,7 +12,7 @@ export const PROJECTS = [
     tags: ['Logo Design', 'Brand Guidelines', 'Packaging', 'Print'],
     gradient: 'from-purple-950 to-purple-700',
     accentColor: '#a855f7',
-    liveUrl: '#',
+    liveUrl: 'https://nawaya.io',
     sourceUrl: null, // design project — no source
     year: '2024',
   },

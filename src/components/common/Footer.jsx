@@ -48,7 +48,7 @@ const Footer = () => {
     },
     {
       icon: 'Email',
-      href: 'mailto:pixnixdesign@gmail.com',
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=pixnixdesign@gmail.com',
       svg: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -124,7 +124,7 @@ const Footer = () => {
                 </motion.a>
 
                 <motion.a
-                  href="mailto:pixnixdesign@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=pixnixdesign@gmail.com"
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-text-light hover:text-primary-pink3 transition-colors"
                   whileHover={{ x: 4 }}

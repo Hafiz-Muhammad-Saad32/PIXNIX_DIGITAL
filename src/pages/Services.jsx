@@ -1,8 +1,13 @@
-import { motion } from "framer-motion"
+import { useState } from "react"
+import { AnimatePresence } from "framer-motion"
 import { services } from "../hooks/servicesData"
 import SectionChip from "../components/common/SectionChip"
+import ServiceCard from "../components/ServiceCard"
+import ServiceModal from "../components/ServiceModal"
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState(null)
+
   return (
     <section className="bg-dark-base min-h-screen py-24 md:py-32 px-4">
 
@@ -10,7 +15,7 @@ const Services = () => {
 
         {/* Header */}
 
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-16">
 
           <SectionChip className="bg-black justify-center">
             What We Do
@@ -26,96 +31,22 @@ const Services = () => {
 
           <p className="text-text-light text-lg leading-relaxed">
             We cover the full creative and digital stack.
-            One agency, every solution no need to shop around.
+            One agency, every solution — no need to shop around.
           </p>
 
         </div>
 
-        {/* Services */}
+        {/* Services overview grid */}
 
-        <div className="space-y-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
 
           {services.map((service, index) => (
-            <motion.div
+            <ServiceCard
               key={service.id}
-              initial={{
-                opacity: 0,
-                y: 40
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              viewport={{
-                once: true
-              }}
-              transition={{
-                duration: 0.5
-              }}
-              className="
-            card-base
-            p-8
-            md:p-10
-            overflow-hidden
-            group
-          "
-            >
-
-              <div className="grid lg:grid-cols-2 gap-10">
-
-                <div>
-
-                  <div className="text-5xl mb-5">
-                    {service.icon}
-                  </div>
-
-                  <h2 className="text-3xl md:text-4xl font-black mb-3">
-                    {service.title}
-                  </h2>
-
-                  <h3 className="text-primary-pink text-xl font-semibold mb-5">
-                    {service.subtitle}
-                  </h3>
-
-                  <p className="text-text-light leading-relaxed">
-                    {service.description}
-                  </p>
-
-                </div>
-
-                <div>
-
-                  <h4 className="font-bold text-lg mb-5">
-                    What's Included
-                  </h4>
-
-                  <ul className="space-y-4">
-
-                    {service.includes.map((item, i) => (
-                      <li
-                        key={i}
-                        className="
-                      flex
-                      gap-3
-                      items-start
-                      text-text-light
-                    "
-                      >
-                        <span className="text-primary-pink">
-                          ✓
-                        </span>
-
-                        {item}
-                      </li>
-                    ))}
-
-                  </ul>
-
-                </div>
-
-              </div>
-
-            </motion.div>
+              service={service}
+              index={index}
+              onSelect={setSelectedService}
+            />
           ))}
 
         </div>
@@ -142,7 +73,7 @@ const Services = () => {
             </h2>
 
             <p className="text-text-light max-w-2xl mx-auto mb-8">
-              Tell us about your brand and goals 
+              Tell us about your brand and goals —
               we'll map out exactly what will move
               the needle for you.
             </p>
@@ -166,11 +97,10 @@ const Services = () => {
 
               <a
                 href="https://wa.me/923093210056"
-                variant="primary"
-                target="_blank" rel="noopener noreferrer"
-                external
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
-              px-1
+              px-4
               py-2
               md:px-8
               md:py-4
@@ -190,6 +120,17 @@ const Services = () => {
         </div>
 
       </div>
+
+      {/* Service detail modal */}
+
+      <AnimatePresence>
+        {selectedService && (
+          <ServiceModal
+            service={selectedService}
+            onClose={() => setSelectedService(null)}
+          />
+        )}
+      </AnimatePresence>
 
     </section>
   )
