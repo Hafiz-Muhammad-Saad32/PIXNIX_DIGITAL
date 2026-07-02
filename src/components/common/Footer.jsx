@@ -81,7 +81,7 @@ const Footer = () => {
   const MotionLink = motion(Link)
 
   return (
-    <footer id="contact" className="section-base bg-dark-base2 border-t mt-5 border-border-secondary">
+    <footer id="contact" className="section-base bg-dark-base2 z-20 border-t mt-5 border-border-secondary">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         {/* Contact Form */}
         {/* <ContactForm /> */}

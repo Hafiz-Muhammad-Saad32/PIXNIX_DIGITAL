@@ -8,30 +8,12 @@ import CTA from '../components/homeSections/CTA.jsx'
 
 const Home = () => {
     return (
-        <div>          
+        <div className="min-h-screen bg-[url('/img/bg.jpeg')] bg-cover bg-center bg-fixed">
             <Hero />
-            <ScrollReveal>
-                <div className="divider-line w-full" />
-            </ScrollReveal>
             <About />
-            <ScrollReveal>
-                <div className="divider-line w-full" />
-            </ScrollReveal>
             <Service />
-            <ScrollReveal>
-                <div className="divider-line w-full" />
-            </ScrollReveal>
             <Portfolio />
-            <ScrollReveal>
-                <div className="divider-line w-full" />
-            </ScrollReveal>
-            <ScrollReveal>
-                <div className="divider-line w-full" />
-            </ScrollReveal>
             <CTA />
-            <ScrollReveal>
-                <div className="divider-line w-full" />
-            </ScrollReveal>
         </div>
     )
 }

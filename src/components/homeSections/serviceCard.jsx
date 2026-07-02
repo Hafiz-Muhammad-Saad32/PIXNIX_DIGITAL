@@ -31,7 +31,7 @@ const ServiceCard = ({ service }) => {
         className="
           absolute
           inset-0
-          opacity-0
+          opacity-10
           group-hover:opacity-100
           transition-all
           duration-500
@@ -69,7 +69,7 @@ const ServiceCard = ({ service }) => {
         </h3>
 
         <p className="text-sm text-text-light leading-relaxed">
-          {service.description}
+          {service.subtitle}
         </p>
 
         

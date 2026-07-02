@@ -5,7 +5,7 @@ import { ButtonLink } from '../common/Button'
 
 const CTA = () => {
   return (
-    <section id="cta" className="section-base bg-dark-base py-20 md:py-28 px-4 md:px-8 relative overflow-hidden">
+    <section id="cta" className="section-base  py-20 md:py-28 px-4 md:px-8 relative overflow-hidden">
       {/* Background glow */}
       <motion.div
         className="absolute w-96 h-96 rounded-full pointer-events-none"

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/animations/ScrollReveal'
 import SectionChip from '../components/common/SectionChip'
+import PinkGlobeBackground from '../components/animations/PinkGlobeBackground'
 
 const ValueCard = ({ icon, title, description }) => {
   return (
@@ -144,13 +145,18 @@ const About = () => {
       id="about"
       className="
      section-base
-     bg-dark-base2
      py-20
      md:py-28
      px-4
      md:px-8
+     relative
+     overflow-hidden
    "
-    > <div className="max-w-7xl mx-auto">
+    >
+      {/* Globe sits fixed behind the whole section, visible while this section is on screen */}
+      <PinkGlobeBackground />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Hero */}
 
         <ScrollReveal>

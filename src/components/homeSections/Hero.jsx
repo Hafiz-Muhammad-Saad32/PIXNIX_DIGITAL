@@ -117,12 +117,14 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="bg-[url('/img/bg.png')] relative z-10 h-full bg-cover bg-centerrelative min-h-screen mt-10 flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pb-0"
+      className="md:relative z-10 mt-10 flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pb-0 mb-0"
     >
-      <div className="absolute inset-0 bg-black/50"></div>
-      {/* Content */}
+      <video autoPlay muted playsInline className="hidden md:flex md:absolute z-0 inset-0 h-full w-full object-cover bg-cover bg-fixed">
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
+      <div className="hidden md:absolute  inset-0 bg-black/10" />
       <motion.div
-        className="relative z-10 max-w-full md:max-w-4xl mx-auto text-center px-4 sm:px-6 md:px-8"
+        className="z-10 max-w-full md:max-w-4xl mx-auto text-center px-4 sm:px-6 md:px-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

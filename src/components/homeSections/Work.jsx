@@ -1,7 +1,8 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { PROJECTS } from '../../hooks/portfolioData'
+import PortfolioCaseStudyModal from '../PortfolioCaseStudyModal'
 // ─── Framer Motion variants ────────────────────────────────────
 
 const containerVariants = {
@@ -32,13 +33,19 @@ const headingVariants = {
 
 // ─── Featured Card ─────────────────────────────────────────────
 
-const FeaturedCard = ({ project, isLarge = false }) => {
+const FeaturedCard = ({ project, isLarge = false, onSelect }) => {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <motion.div
       variants={cardVariants}
       className={`group relative overflow-hidden rounded-2xl border border-white/8 cursor-pointer
         ${isLarge ? 'row-span-2 min-h-[340px] md:min-h-[460px]' : 'min-h-[220px] md:min-h-[240px]'}
       `}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
     >
       {/* Gradient background */}
       <motion.div
@@ -69,11 +76,42 @@ const FeaturedCard = ({ project, isLarge = false }) => {
 
       {/* Scan-line hover accent — the signature micro-interaction */}
       <motion.div
-        className="absolute inset-x-0 top-0 h-[2px] origin-left"
+        className="absolute inset-x-0 top-0 h-[2px] origin-left z-10"
         style={{ background: project.accentColor }}
         initial={{ scaleX: 0 }}
         whileHover={{ scaleX: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
+      />
+
+      <motion.button
+        type="button"
+        onClick={() => onSelect(project)}
+        className="absolute inset-0 z-10 flex items-center justify-center"
+        aria-label={`View case study for ${project.title}`}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.22 }}
+      >
+        <motion.div
+          initial={false}
+          animate={isHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.96 }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center gap-2 rounded-full border border-white/20 bg-black/70 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="shrink-0">
+            <path d="M2 12a10 10 0 1 0 20 0 10 10 0 0 0-20 0Z" />
+            <path d="M12 8v8" />
+            <path d="M8 12h8" />
+          </svg>
+          View Case Study
+        </motion.div>
+      </motion.button>
+
+      <motion.div
+        initial={false}
+        animate={isHovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.03 }}
+        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
       />
 
       {/* Content overlay — slides up on hover */}
@@ -138,6 +176,7 @@ const HomePortfolioPreview = () => {
   const navigate = useNavigate()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const [selectedProject, setSelectedProject] = useState(null)
 
   // Pick first 3 featured projects; fallback to first 3 if none flagged
   const featured = PROJECTS.filter((p) => p.featured).slice(0, 3)
@@ -199,12 +238,12 @@ const HomePortfolioPreview = () => {
         >
           {/* Large card — left, spans 2 rows on sm+ */}
           <div className="sm:row-span-2">
-            <FeaturedCard project={large} isLarge />
+            <FeaturedCard project={large} isLarge onSelect={setSelectedProject} />
           </div>
 
           {/* Two stacked smaller cards — right */}
           {small.map((project) => (
-            <FeaturedCard key={project.id} project={project} />
+            <FeaturedCard key={project.id} project={project} onSelect={setSelectedProject} />
           ))}
         </motion.div>
 
@@ -254,6 +293,12 @@ const HomePortfolioPreview = () => {
           </span>
         </motion.div>
       </div>
+
+      <PortfolioCaseStudyModal
+        project={selectedProject}
+        isOpen={Boolean(selectedProject)}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   )
 }

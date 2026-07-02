@@ -56,7 +56,7 @@ const AboutSection = () => {
   ]
 
   return (
-    <section id="about" className="section-base bg-dark-base2 py-20 md:py-28 px-4 md:px-8">
+    <section id="about" className="section-base bg-dark-base2 z-20 my-0 py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Left Content */}
