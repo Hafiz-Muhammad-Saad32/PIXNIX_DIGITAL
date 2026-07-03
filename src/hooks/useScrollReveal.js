@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export const useScrollReveal = () => {
   const elementRef = useRef(null)
@@ -85,7 +85,7 @@ export const useMouseCursor = () => {
 
 export const useScrollAnimation = () => {
   const elementRef = useRef(null)
-  const [isVisible, setIsVisible] = React.useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

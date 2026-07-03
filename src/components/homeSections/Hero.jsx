@@ -1,8 +1,6 @@
 
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
 import FloatingMesh from '../animations/FloatingMesh'
-import ScrollReveal from '../animations/ScrollReveal'
 import { ButtonLink } from '../common/Button'
 import SectionChip from '../common/SectionChip'
 
@@ -39,26 +37,6 @@ const FloatingStats = ({ stat, delay }) => {
       <div className="text-xs text-text-light mt-0.5">
         {stat.subtext}
       </div>
-    </motion.div>
-  )
-}
-
-const ScrollIndicator = () => {
-  return (
-    <motion.div
-      className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 z-10 pointer-events-none"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.7 }}
-    >
-      <span className="text-xs text-text-muted letter-spacing-2px uppercase font-medium">
-        Scroll
-      </span>
-      <motion.div
-        className="w-0.5 h-9 bg-gradient-to-b from-primary-pink to-transparent rounded-full"
-        animate={{ scaleY: [0, 1, 1, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      />
     </motion.div>
   )
 }
@@ -122,7 +100,6 @@ const Hero = () => {
       <video autoPlay muted playsInline className="hidden md:flex md:absolute z-0 inset-0 h-full w-full object-cover bg-cover bg-fixed">
         <source src="/bg.mp4" type="video/mp4" />
       </video>
-      <div className="hidden md:absolute  inset-0 bg-black/10" />
       <motion.div
         className="z-10 max-w-full md:max-w-4xl mx-auto text-center px-4 sm:px-6 md:px-8"
         variants={containerVariants}
@@ -148,7 +125,7 @@ const Hero = () => {
 
         {/* Description */}
         <motion.p
-          className="text-lg md:text-xl text-text-light max-w-2xl mx-auto mb-8 leading-relaxed"
+          className="text-lg md:text-xl md:text-black max-w-2xl mx-auto mb-8 leading-relaxed"
           variants={itemVariants}
         >
           Built for startups. Designed for growth. We craft brands, visuals, and AI powered strategies that stop the scroll and convert attention into real revenue.
@@ -167,6 +144,7 @@ const Hero = () => {
           <ButtonLink
             href="/portfolio"
             variant="secondary"
+            className='text-black md:text-white border-black md:border-white'
           >
             View Our Work →
           </ButtonLink>

@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-import ScrollReveal from '../components/animations/ScrollReveal.jsx'
 import Hero from '../components/homeSections/Hero.jsx'
 import About from '../components/homeSections/about.jsx'
 import Service from '../components/homeSections/service.jsx'

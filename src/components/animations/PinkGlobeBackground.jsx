@@ -3,6 +3,7 @@ import * as THREE from 'three'
 
 // Pink themed rotating globe, rendered as a fixed background
 // that stays visible across the whole page while scrolling.
+// Fully responsive: scales smoothly across all screen sizes.
 const PinkGlobeBackground = () => {
   const canvasRef = useRef(null)
 
@@ -19,7 +20,6 @@ const PinkGlobeBackground = () => {
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000)
-    camera.position.z = 6.5
 
     const group = new THREE.Group()
     scene.add(group)
@@ -107,11 +107,48 @@ const PinkGlobeBackground = () => {
     let rafId
     let rotVelY = 0.0018
 
+    // ---- Responsive tuning ----
+    // Reference viewport width jahan scale = 1 (design baseline, e.g. desktop)
+    const BASE_WIDTH = 1440
+    // Chhoti se chhoti screen par bhi globe itna zaroor dikhe
+    const MIN_SCALE = 0.55
+    // Bade se bade screen par globe itna se zyada bada na ho
+    const MAX_SCALE = 1.1
+    // Camera ke around kitni breathing room (>1 = margin, jitna zyada utna chota+door)
+    const PADDING = 1.4
+
+    const computeScale = (w) => {
+      // Width ke hisaab se linear interpolation, phir clamp
+      const raw = w / BASE_WIDTH
+      return Math.min(MAX_SCALE, Math.max(MIN_SCALE, raw))
+    }
+
     const resize = () => {
       const w = canvas.clientWidth
       const h = canvas.clientHeight
+      if (w === 0 || h === 0) return
+
       renderer.setSize(w, h, false)
-      camera.aspect = w / h
+
+      const aspect = w / h
+      camera.aspect = aspect
+
+      const scale = computeScale(w)
+      group.scale.setScalar(scale)
+
+      // Vertical & horizontal half-angles -> jo bhi tight ho usko fit karo
+      const vHalf = (camera.fov * Math.PI) / 180 / 2
+      const hHalf = Math.atan(Math.tan(vHalf) * aspect)
+      const limitingHalf = Math.min(vHalf, hHalf)
+
+      // Extra safety: bohot tall/narrow screens (foldables, split-view) ke liye
+      // aspect ratio bhi factor me le lo taake kabhi crop na ho
+      const safeAspectFactor = aspect < 0.6 ? 1.15 : 1 // narrow portrait -> thoda extra room
+
+      const distance =
+        (radius * scale * PADDING * safeAspectFactor) / Math.tan(limitingHalf)
+
+      camera.position.z = distance
       camera.updateProjectionMatrix()
     }
 
@@ -121,13 +158,35 @@ const PinkGlobeBackground = () => {
       renderer.render(scene, camera)
     }
 
-    window.addEventListener('resize', resize)
+    // Debounced resize -> resize event bar bar fire hota hai (especially mobile
+    // address bar show/hide se), isliye rAF se throttle karte hain
+    let resizeScheduled = false
+    const scheduleResize = () => {
+      if (resizeScheduled) return
+      resizeScheduled = true
+      requestAnimationFrame(() => {
+        resize()
+        resizeScheduled = false
+      })
+    }
+
+    window.addEventListener('resize', scheduleResize)
+    window.addEventListener('orientationchange', scheduleResize)
+
+    // ResizeObserver -> layout shifts (sidebar open/close, font load, etc.)
+    // par bhi globe ko sahi size me rakhta hai, sirf window resize par depend
+    // nahi karta
+    const ro = new ResizeObserver(scheduleResize)
+    ro.observe(canvas)
+
     resize()
     animate()
 
     return () => {
       cancelAnimationFrame(rafId)
-      window.removeEventListener('resize', resize)
+      window.removeEventListener('resize', scheduleResize)
+      window.removeEventListener('orientationchange', scheduleResize)
+      ro.disconnect()
       dotGeo.dispose()
       wireGeo.dispose()
       coreGeo.dispose()
@@ -141,7 +200,7 @@ const PinkGlobeBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-screen h-screen z-10 pointer-events-none"
+      className="fixed inset-0 md:m-5 w-screen h-screen z-10 pointer-events-none"
     />
   )
 }

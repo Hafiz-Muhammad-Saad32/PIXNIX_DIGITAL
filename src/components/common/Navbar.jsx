@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import { Link, useLocation } from "react-router-dom"
 import { useState, useEffect, useCallback } from 'react'
-import logo from '../../../public/img/logo.png'
 import { ButtonLink } from './Button'
+
+const logo = '/img/logo.png'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)

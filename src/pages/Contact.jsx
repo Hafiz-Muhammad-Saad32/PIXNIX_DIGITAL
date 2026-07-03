@@ -2,8 +2,6 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import ScrollReveal from '../components/animations/ScrollReveal'
 import SectionChip from '../components/common/SectionChip'
-import logo from '../../public/img/logo.png'
-import { Button } from '../components/common/Button'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -270,9 +268,8 @@ const Contact = () => {
 
             <div className="flex gap-3">
               <a href="https://wa.me/923093210056"
-                variant="primary"
-                target="_blank" rel="noopener noreferrer"
-                external
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-whatsapp inline-block px-5 py-3 bg-green-600 text-white rounded-xl">Whats App us→</a>
             </div>
           </div>

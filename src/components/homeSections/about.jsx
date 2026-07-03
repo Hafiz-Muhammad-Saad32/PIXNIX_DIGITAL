@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import ScrollReveal from '../animations/ScrollReveal'
 import SectionChip from '../common/SectionChip'
 
@@ -25,12 +26,7 @@ const ValueCard = ({ icon, title, description, delay }) => {
 }
 
 const AboutSection = () => {
-  const stats = [
-    { num: '150+', label: 'Projects Delivered' },
-    { num: '80+', label: 'Brands Scaled' },
-    { num: '3 Yrs', label: 'In the Industry' },
-    { num: '98%', label: 'Client Satisfaction' }
-  ]
+  const navigate = useNavigate()
 
   const values = [
     {
@@ -104,7 +100,7 @@ const AboutSection = () => {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 />
-                <a href='/about' className="relative z-10">View Details</a>
+                <span className="relative z-10">View Details</span>
               </motion.button>
             </div>
           </ScrollReveal>

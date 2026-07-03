@@ -31,7 +31,7 @@ const ServiceCard = ({ service }) => {
         className="
           absolute
           inset-0
-          opacity-10
+          opacity-20
           group-hover:opacity-100
           transition-all
           duration-500

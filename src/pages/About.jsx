@@ -36,7 +36,13 @@ const ValueCard = ({ icon, title, description }) => {
   )
 }
 
+// ─── Team Card Updated to match image_06d5ad.png ───────────────────
 const TeamCard = ({ member }) => {
+  // Name se initials (e.g., "Muhammad Ali" -> "MA") nikalne ke liye helper
+  const initials = member.name
+    ? member.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+    : '';
+
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -44,29 +50,23 @@ const TeamCard = ({ member }) => {
         type: 'spring',
         stiffness: 250
       }}
-      className="card-base overflow-hidden group"
-    > <div className="overflow-hidden"> <img
-      src={member.image}
-      alt={member.name}
-      className="
-         w-full
-         aspect-square
-         object-cover
-         transition-transform
-         duration-500
-         group-hover:scale-110
-       "
-    /> </div>
-      < div className="p-5" >
-        <h4 className="font-bold text-lg">
-          {member.name}
-        </h4>
+      className="card-base p-8 rounded-[24px] border border-white/10 bg-black/30 flex flex-col items-center justify-center text-center relative overflow-hidden group min-h-[220px]"
+    >
+      {/* Blue/Purple Gradient Circle with Initials from image_06d5ad.png */}
+      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#d43bf6] to-[#f65cf6] flex items-center justify-center text-neutral-950 font-black text-sm mb-5 shadow-md">
+        {initials}
+      </div>
 
-        <p className="text-primary-pink text-sm mt-1">
-          {member.role}
-        </p>
-      </div >
-    </motion.div >
+      {/* Member Name */}
+      <h4 className="font-bold text-base text-white mb-1">
+        {member.name}
+      </h4>
+
+      {/* Member Role */}
+      <p className="text-text-light/60 text-xs">
+        {member.role}
+      </p>
+    </motion.div>
   )
 }
 
@@ -116,27 +116,41 @@ const About = () => {
         "We don't just deliver a project and disappear. We build relationships and grow with our clients."
     }
   ]
-
+//Design Lead: Arham Zameer
+// Designer:Hammad 
+// Developer: M.Saad 
+// UGC Lead:Junaid Kamran
+// CGI Lead:Alisha Sagheer
+// Ai Automation Lead: Krrish Kishor
   const team = [
     {
-      name: 'Muhammad Ali',
-      role: 'Creative Director',
-      image: '/team/member1.jpg'
+      name: 'Shayan Afridi',
+      role: 'Founder & Creative Director',
+      founder : true
     },
     {
-      name: 'Ayesha Khan',
-      role: 'Brand Strategist',
-      image: '/team/member2.jpg'
+      name: 'Hammad Aziz',
+      role: 'Design Lead',
     },
     {
-      name: 'Hamza Ahmed',
-      role: 'Lead Developer',
-      image: '/team/member3.jpg'
+      name: 'Muhammad Saad',
+      role: 'Development Lead',
     },
     {
-      name: 'Sara Noor',
-      role: 'AI Automation Specialist',
-      image: '/team/member4.jpg'
+      name: 'Ali Khan',
+      role: 'Marketing Lead',
+    },
+    {
+      name: 'Junaid Kamran',
+      role: 'UGC Lead',
+    },
+    {
+      name: 'Alisha Sagheer',
+      role: 'CGI Lead',
+    },
+    {
+      name: 'Krrish Kishor',
+      role: 'AI Automation Lead',
     }
   ]
 
@@ -306,7 +320,7 @@ const About = () => {
           <div className="text-center mb-14">
 
             <SectionChip className="bg-black justify-center">
-              The People Behind Pixnix
+              Leadership
             </SectionChip>
 
             <h3
@@ -317,10 +331,54 @@ const About = () => {
             mt-4
           "
             >
-              Small Team,
               <span className="gradient-text-pink">
-                {' '}Big Impact
+                The Founder
               </span>
+              {' '}Diving The Vision.
+            </h3>
+
+          </div>
+
+          <div
+            className="
+          flex
+          flex-col
+          md:flex-row
+          gap-6
+          justify-center
+          align-center
+        "
+          >
+            {team.map((member) => (
+              member.founder === true && (
+              <TeamCard
+                key={member.name}
+                member={member}
+              />
+            )))}
+          </div>
+
+        </div>
+        <div className="mt-28">
+
+          <div className="text-center mb-14">
+
+            <SectionChip className="bg-black justify-center">
+              Core Team
+            </SectionChip>
+
+            <h3
+              className="
+            text-3xl
+            md:text-5xl
+            font-black
+            mt-4
+          "
+            >
+              <span className="gradient-text-pink">
+                {' '}Senior Specialists
+              </span>
+              , Built To Deliver.
             </h3>
 
             <p
@@ -342,18 +400,20 @@ const About = () => {
 
           <div
             className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          lg:grid-cols-4
+          flex
+          flex-col
+          md:flex-row
           gap-6
+          justify-center
+          align-center
+          flex-wrap
         "
           >
             {team.map((member) => (
-              <TeamCard
+              member.founder ===  undefined &&(<TeamCard
                 key={member.name}
                 member={member}
-              />
+              />)
             ))}
           </div>
 

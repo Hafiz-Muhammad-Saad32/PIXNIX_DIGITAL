@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../animations/ScrollReveal'
-import logo from '../../../public/img/logo.png'
-import { Button } from '../common/Button'
+
+const logo = '/img/logo.png'
 
 const Footer = () => {
   const serviceLinks = [
