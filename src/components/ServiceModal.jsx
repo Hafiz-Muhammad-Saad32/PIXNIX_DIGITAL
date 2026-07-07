@@ -259,7 +259,7 @@ const ServiceModal = ({ service, onClose }) => {
               {service.ctaLine}
             </p>
 
-            <div className="flex items-center gap-3 flex-none">
+            <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-3 flex-none">
               <button
                 type="button"
                 onClick={onClose}

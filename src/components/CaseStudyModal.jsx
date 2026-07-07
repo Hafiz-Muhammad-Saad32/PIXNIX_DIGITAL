@@ -44,7 +44,9 @@ export default function CaseStudyModal({ caseStudy, onClose }) {
               <img
                 src={caseStudy.img}
                 alt={caseStudy.name}
-                className="block h-[240px] w-full rounded-t-[20px] object-cover object-top max-[560px]:h-[180px]"
+                loading="lazy"
+                decoding="async"
+                className="block h-[240px] w-full rounded-t-[20px] object-cover object-center  max-[560px]:h-[180px]"
               />
             )}
 

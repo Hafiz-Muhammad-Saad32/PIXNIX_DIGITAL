@@ -430,9 +430,9 @@ const About = () => {
             className="
           rounded-3xl
           border
-          border-primary-pink/20
+          border-primary-pink/50
           bg-gradient-to-r
-          from-primary-pink/10
+          from-primary-pink/30
           to-transparent
           p-8
           md:p-14

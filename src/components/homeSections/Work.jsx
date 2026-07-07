@@ -42,7 +42,7 @@ const FeaturedCard = ({ project }) => {
     >
       {/* 1. Use image from data file as background */}
       {project.img && (
-        <img src={project.img} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
+        <img oading="lazy" decoding="async" src={project.img} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
       )}
 
       {/* 2. New Pink Background on Hover Layer - Subtle semi-transparent pink overlay on hover */}
@@ -136,7 +136,7 @@ const HomePortfolioPreview = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
         >
           {displayProjects.map((project) => (
             <FeaturedCard key={project.id} project={project} />

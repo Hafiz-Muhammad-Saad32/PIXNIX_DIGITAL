@@ -7,7 +7,7 @@ const caseStudies = [
     id: "nawaya",
     icon: "🚀",
     featured: true,
-    img: "/img/portfolioPics/Nawaya.png",
+    img: "/img/portfolioPics/Nawaya.webp",
     cat: "SaaS Platform Development",
     name: "Nawaya.io",
     headline:
@@ -66,7 +66,7 @@ const caseStudies = [
     id: "mgt",
     icon: "📦",
     featured: true,
-    img: "/img/portfolioPics/mgt.png",
+    img: "/img/portfolioPics/mgt.webp",
     cat: "Business Website + AI Chatbot",
     name: "MGT Packers & Movers",
     headline:
@@ -111,7 +111,7 @@ const caseStudies = [
     id: "1and5tech",
     icon: "🛒",
     featured: true,
-    img: "/img/portfolioPics/1and5tech.png",
+    img: "/img/portfolioPics/1and5tech.webp",
     cat: "E-Commerce Development",
     name: "1 AND 5 TECH",
     headline:
@@ -156,7 +156,7 @@ const caseStudies = [
   {
     id: "pawtrust",
     featured: true,
-    img: "/img/portfolioPics/pawtrust.png",
+    img: "/img/portfolioPics/pawtrust.webp",
     cat: "Wordpress Website",
     name: "The Paw Trust",
     headline:
@@ -209,7 +209,7 @@ const caseStudies = [
   {
     id: "zavia",
     icon: "🍽️",
-    img: "/img/portfolioPics/zavia.png",
+    img: "/img/portfolioPics/zavia.webp",
     cat: "Custom SaaS / Management System",
     name: "Zavia Restaurant System",
     headline:
@@ -256,7 +256,7 @@ const caseStudies = [
   {
     id: "leadpilot",
     icon: "🤖",
-    img: "/img/portfolioPics/leadbuddy.png",
+    img: "/img/portfolioPics/leadbuddy.webp",
     cat: "AI Automation / Lead Management",
     name: "LeadPilot: AI Lead System",
     headline:

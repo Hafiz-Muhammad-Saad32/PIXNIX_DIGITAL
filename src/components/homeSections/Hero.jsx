@@ -4,6 +4,8 @@ import FloatingMesh from '../animations/FloatingMesh'
 import { ButtonLink } from '../common/Button'
 import SectionChip from '../common/SectionChip'
 
+import { useRef } from "react";
+
 const FloatingStats = ({ stat, delay }) => {
   return (
     <motion.div
@@ -42,6 +44,18 @@ const FloatingStats = ({ stat, delay }) => {
 }
 
 const Hero = () => {
+
+  const videoRef = useRef(null);
+
+  const handleVideoEnd = () => {
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play();
+      }
+    }, 3000); // 3 second ka gap
+  };
+
   const stats = [
     {
       label: 'Projects Done',
@@ -97,7 +111,7 @@ const Hero = () => {
       id="home"
       className="md:relative z-10 mt-10 flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pb-0 mb-0"
     >
-      <video autoPlay muted playsInline className="hidden md:flex md:absolute z-0 inset-0 h-full w-full object-cover bg-cover bg-fixed">
+      <video onEnded={handleVideoEnd} ref={videoRef} preload="metadata" poster autoPlay muted playsInline className="hidden md:flex md:absolute z-0 inset-0 h-full w-full object-cover bg-cover bg-fixed">
         <source src="/bg.mp4" type="video/mp4" />
       </video>
       <motion.div
@@ -125,7 +139,7 @@ const Hero = () => {
 
         {/* Description */}
         <motion.p
-          className="text-lg md:text-xl md:text-black max-w-2xl mx-auto mb-8 leading-relaxed"
+          className="text-lg md:text-xl md:text-pink-600 max-w-2xl mx-auto mb-8 leading-relaxed"
           variants={itemVariants}
         >
           Built for startups. Designed for growth. We craft brands, visuals, and AI powered strategies that stop the scroll and convert attention into real revenue.
@@ -144,7 +158,7 @@ const Hero = () => {
           <ButtonLink
             href="/portfolio"
             variant="secondary"
-            className='text-black md:text-white border-black md:border-white'
+            className='text-pink-600 md:text-white border-pink-600 md:border-white'
           >
             View Our Work →
           </ButtonLink>

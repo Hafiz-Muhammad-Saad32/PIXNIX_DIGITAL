@@ -98,7 +98,9 @@ function CaseStudyCard({ caseStudy, index, onOpen }) {
         }`}
     >
       {/* Thumbnail */}
-      <div
+      <div 
+        oading="lazy"
+        decoding="async"
         className="relative flex h-[185px] items-end justify-start overflow-hidden bg-cover bg-top text-5xl"
         style={{
           background: caseStudy.thumb,
@@ -314,7 +316,7 @@ const Portfolio = () => {
             initial="hidden"
             animate="visible"
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
           >
             {filtered.length > 0 ? (
               filtered.map((caseStudy, index) => (

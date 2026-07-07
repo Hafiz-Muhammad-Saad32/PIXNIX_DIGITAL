@@ -6,7 +6,7 @@ import CTA from '../components/homeSections/CTA.jsx'
 
 const Home = () => {
     return (
-        <div className="min-h-screen bg-[url('/img/bg.jpeg')] bg-cover bg-center bg-fixed">
+        <div loading="lazy" decoding="async" className="min-h-screen bg-[url('/img/bg1.webp')] md:bg-[url('/img/bg.webp')] object-fill bg-cover bg-center bg-fixed">
             <Hero />
             <About />
             <Service />
