@@ -111,8 +111,8 @@ const Hero = () => {
       id="home"
       className="md:relative z-10 mt-10 flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pb-0 mb-0"
     >
-      <video onEnded={handleVideoEnd} ref={videoRef} preload="metadata" poster autoPlay muted playsInline className="hidden md:flex md:absolute z-0 inset-0 h-full w-full object-cover bg-cover bg-fixed">
-        <source src="/bg.mp4" type="video/mp4" />
+      <video onEnded={handleVideoEnd} ref={videoRef} preload="metadata" autoPlay muted playsInline className="hidden md:flex md:absolute z-0 inset-0 h-full w-full object-cover bg-cover bg-fixed">
+        <source src="https://res.cloudinary.com/a9idgqzf/video/upload/v1783510653/bg_xfiiua.mp4" type="video/mp4" />
       </video>
       <motion.div
         className="z-10 max-w-full md:max-w-4xl mx-auto text-center px-4 sm:px-6 md:px-8"
