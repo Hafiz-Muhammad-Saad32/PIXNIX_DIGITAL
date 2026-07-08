@@ -155,12 +155,12 @@ export default function CaseStudyModal({ caseStudy, onClose }) {
                 >
                   🔗 View Live Project
                 </a>
-                <button
-                  onClick={onClose}
+                <a
+                  href = "/contact"
                   className="w-full rounded-full bg-[#ec1a8d] px-5 py-2.5 text-sm font-semibold text-white transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(236,26,141,0.4)] sm:w-auto"
                 >
                   Start My Project →
-                </button>
+                </a>
               </div>
             </div>
           </>
