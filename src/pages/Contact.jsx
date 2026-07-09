@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import emailjs from "@emailjs/browser";
 import { useState } from 'react'
 import ScrollReveal from '../components/animations/ScrollReveal'
 import SectionChip from '../components/common/SectionChip'
@@ -21,19 +22,49 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate send
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSuccessMessage("We've received your message! Our team will get back to you within 24 hours.")
-      setFormData({ fullName: '', email: '', phone: '', service: '', budget: '', message: '' })
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          budget: formData.budget,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-      setTimeout(() => setSuccessMessage(''), 8000)
-    }, 1200)
-  }
+      setSuccessMessage(
+        "We've received your message! Our team will get back to you within 24 hours."
+      );
+
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        service: "",
+        budget: "",
+        message: "",
+      });
+
+      setTimeout(() => setSuccessMessage(""), 8000);
+    } catch (error) {
+      console.error(error);
+
+      setSuccessMessage(
+        "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const faqs = [
     {
@@ -116,15 +147,15 @@ const Contact = () => {
                     <label htmlFor="fullName" className="block text-xs uppercase font-bold text-primary-pink3 mb-2">
                       Full Name <span aria-label="required">*</span>
                     </label>
-                    <input 
+                    <input
                       id="fullName"
-                      name="fullName" 
-                      value={formData.fullName} 
-                      onChange={handleChange} 
-                      required 
-                      placeholder="Your full name" 
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your full name"
                       aria-required="true"
-                      className="form-input bg-black h-12" 
+                      className="form-input bg-black h-12"
                     />
                   </div>
 
@@ -132,16 +163,16 @@ const Contact = () => {
                     <label htmlFor="email" className="block text-xs uppercase font-bold text-primary-pink3 mb-2">
                       Email Address <span aria-label="required">*</span>
                     </label>
-                    <input 
+                    <input
                       id="email"
-                      type="email" 
-                      name="email" 
-                      value={formData.email} 
-                      onChange={handleChange} 
-                      required 
-                      placeholder="you@email.com" 
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="you@email.com"
                       aria-required="true"
-                      className="form-input bg-black h-12" 
+                      className="form-input bg-black h-12"
                     />
                   </div>
                 </div>
@@ -150,13 +181,13 @@ const Contact = () => {
                   <label htmlFor="phone" className="block text-xs uppercase font-bold text-primary-pink3 mb-2">
                     Phone Number
                   </label>
-                  <input 
+                  <input
                     id="phone"
-                    name="phone" 
-                    value={formData.phone} 
-                    onChange={handleChange} 
-                    placeholder="+92 300 1234567" 
-                    className="form-input bg-black h-12" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+92 300 1234567"
+                    className="form-input bg-black h-12"
                   />
                 </div>
 
@@ -165,11 +196,11 @@ const Contact = () => {
                     <label htmlFor="service" className="block text-xs uppercase font-bold text-primary-pink3 mb-2">
                       Service Interested In
                     </label>
-                    <select 
+                    <select
                       id="service"
-                      name="service" 
-                      value={formData.service} 
-                      onChange={handleChange} 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
                       className="form-input bg-black h-12"
                       aria-label="Select a service"
                     >
@@ -182,11 +213,11 @@ const Contact = () => {
                     <label htmlFor="budget" className="block text-xs uppercase font-bold text-primary-pink3 mb-2">
                       Project Budget
                     </label>
-                    <select 
+                    <select
                       id="budget"
-                      name="budget" 
-                      value={formData.budget} 
-                      onChange={handleChange} 
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
                       className="form-input bg-black h-12"
                       aria-label="Select project budget range"
                     >
@@ -203,26 +234,26 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-xs uppercase font-bold text-primary-pink3 mb-2">
                     Tell us about your project <span aria-label="required">*</span>
                   </label>
-                  <textarea 
+                  <textarea
                     id="message"
-                    name="message" 
-                    value={formData.message} 
-                    onChange={handleChange} 
-                    required 
-                    placeholder="Briefly describe your project, goals, and timeline" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Briefly describe your project, goals, and timeline"
                     aria-required="true"
                     aria-describedby="message-hint"
-                    className="form-textarea bg-black" 
+                    className="form-textarea bg-black"
                   />
                   <p id="message-hint" className="text-xs text-text-muted mt-1">
                     Tell us about your project goals and timeline
                   </p>
                 </div>
 
-                <motion.button 
-                  type="submit" 
-                  disabled={isSubmitting} 
-                  whileTap={{ scale: 0.98 }} 
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  whileTap={{ scale: 0.98 }}
                   className="w-full h-14 rounded-2xl bg-primary-pink text-white font-bold text-sm uppercase tracking-[2px] disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-busy={isSubmitting}
                 >
