@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import caseStudies from '../hooks/caseStudies'
 import CaseStudyModal from '../components/CaseStudyModal'
@@ -194,10 +195,32 @@ const EmptyState = ({ filter, onReset }) => (
 
 // ─── Main Component ───────────────────────────────────────────
 const Portfolio = () => {
+  const navigate = useNavigate()
+  const { slug } = useParams()
+
   const [activeFilter, setActiveFilter] = useState('All')
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null)
   const headerRef = useRef(null)
   const headerInView = useInView(headerRef, { once: true })
+
+  // Modal state is derived from the URL, not local state
+  const selectedCaseStudy = slug
+    ? caseStudies.find((cs) => cs.id === slug) ?? null
+    : null
+
+  // If someone hits an invalid slug directly, fall back to the plain grid
+  useEffect(() => {
+    if (slug && !selectedCaseStudy) {
+      navigate('/portfolio', { replace: true })
+    }
+  }, [slug, selectedCaseStudy, navigate])
+
+  const openCaseStudy = (caseStudy) => {
+    navigate(`/portfolio/${caseStudy.id}`)
+  }
+
+  const closeCaseStudy = () => {
+    navigate('/portfolio')
+  }
 
   // Scroll to top on mount
   useEffect(() => {
@@ -324,7 +347,7 @@ const Portfolio = () => {
                   key={caseStudy.id}
                   caseStudy={caseStudy}
                   index={index}
-                  onOpen={setSelectedCaseStudy}
+                  onOpen={openCaseStudy}
                 />
               ))
             ) : (
@@ -366,7 +389,7 @@ const Portfolio = () => {
       {/* Modal */}
       <CaseStudyModal
         caseStudy={selectedCaseStudy}
-        onClose={() => setSelectedCaseStudy(null)}
+        onClose={closeCaseStudy}
       />
     </motion.main>
   )

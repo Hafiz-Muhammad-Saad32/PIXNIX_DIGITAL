@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 import { services } from "../hooks/servicesData"
 import SectionChip from "../components/common/SectionChip"
@@ -6,7 +7,28 @@ import ServiceCard from "../components/ServiceCard"
 import ServiceModal from "../components/ServiceModal"
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState(null)
+  const navigate = useNavigate()
+  const { slug } = useParams()
+
+  // Modal state is derived from the URL, not local state
+  const selectedService = slug
+    ? services.find((service) => service.id === slug) ?? null
+    : null
+
+  // If someone hits an invalid slug directly, fall back to the plain list
+  useEffect(() => {
+    if (slug && !selectedService) {
+      navigate("/services", { replace: true })
+    }
+  }, [slug, selectedService, navigate])
+
+  const openService = (service) => {
+    navigate(`/services/${service.id}`)
+  }
+
+  const closeService = () => {
+    navigate("/services")
+  }
 
   return (
     <section className="bg-dark-base min-h-screen py-24 md:py-32 px-4">
@@ -45,7 +67,7 @@ const Services = () => {
               key={service.id}
               service={service}
               index={index}
-              onSelect={setSelectedService}
+              onSelect={openService}
             />
           ))}
 
@@ -127,7 +149,7 @@ const Services = () => {
         {selectedService && (
           <ServiceModal
             service={selectedService}
-            onClose={() => setSelectedService(null)}
+            onClose={closeService}
           />
         )}
       </AnimatePresence>
