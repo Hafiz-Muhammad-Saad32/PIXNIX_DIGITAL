@@ -13,6 +13,12 @@ const caseStudies = [
     headline:
       "Full-Stack Career Networking SaaS: Architecture, Real-Time Systems & Production Deployment",
     tagline: "98% uptime. Thousands of concurrent users. Zero manual intervention.",
+    h1: "Nawaya.io Case Study: Full-Stack Career Networking SaaS Platform Development",
+    metaTitle: "Nawaya.io Case Study | Custom SaaS Platform Development",
+    metaDescription:
+      "See how Pixnix Digital built Nawaya.io, a full-stack career networking SaaS platform with real-time messaging, from architecture to production deployment. React, Node.js, MongoDB, Socket.io.",
+    keywords:
+      "SaaS platform development case study, custom SaaS development company, real-time messaging app development, Node.js MongoDB development agency, career networking platform development, full-stack SaaS development services",
     url: "https://nawaya.io/",
     tech: [
       "React.js",
@@ -72,6 +78,12 @@ const caseStudies = [
     headline:
       "Conversion-First Business Website With 24/7 AI Lead Capture: Built for a Relocation Business That Never Closes",
     tagline: "No enquiry missed. No business hours. Every visitor captured.",
+    h1: "MGT Packers & Movers Case Study: Business Website With 24/7 AI Chatbot",
+    metaTitle: "MGT Packers & Movers Case Study | Website + AI Chatbot Development",
+    metaDescription:
+      "How Pixnix Digital built a conversion-first business website with a 24/7 AI lead-capture chatbot for MGT Packers & Movers, turning every visitor into a captured lead.",
+    keywords:
+      "business website with AI chatbot, AI chatbot development case study, moving company website design, 24/7 lead capture chatbot, conversion-focused business website, AI lead generation chatbot",
     url: "https://mgt-packers-and-movers.vercel.app/",
     tech: ["Next.js", "React.js", "Tailwind CSS", "AI Chatbot", "WhatsApp API", "Vercel"],
     thumb: "#0a1a2e",
@@ -117,6 +129,12 @@ const caseStudies = [
     headline:
       "Product-First E-Commerce Store Built to Turn Browsers Into Buyers: Every Layout Decision Made for Conversion",
     tagline: "Clean. Fast. Built to sell.",
+    h1: "1 AND 5 TECH Case Study: E-Commerce Store Built to Convert Browsers Into Buyers",
+    metaTitle: "1 AND 5 TECH Case Study | E-Commerce Website Development",
+    metaDescription:
+      "See how Pixnix Digital designed and developed a product-first e-commerce store for 1 AND 5 TECH — fast, clean, and built around conversion at every layout decision.",
+    keywords:
+      "e-commerce website development case study, custom online store development, e-commerce store design agency, product page conversion design, e-commerce development company",
     url: "https://stage.1and5tech.com/",
     tech: [
       "React.js",
@@ -162,6 +180,12 @@ const caseStudies = [
     headline:
       "Purpose-Driven Website for an Animal Welfare Nonprofit: Built to Convert Compassion Into Adoption, Donation & Volunteering",
     tagline: "Every visitor guided toward meaningful action.",
+    h1: "The Paw Trust Case Study: Nonprofit WordPress Website for Animal Welfare",
+    metaTitle: "The Paw Trust Case Study | Nonprofit WordPress Website Design",
+    metaDescription:
+      "How Pixnix Digital built a purpose-driven WordPress website for animal welfare nonprofit The Paw Trust, converting compassion into adoptions, donations, and volunteers.",
+    keywords:
+      "nonprofit website design case study, WordPress website development company, animal welfare website design, donation website development, charity website design agency",
     url: "https://thepawtrust.org/",
     tech: [
       "WordPress",
@@ -215,6 +239,12 @@ const caseStudies = [
     headline:
       "Complete Restaurant Management System: Orders, Kitchen, Inventory, Finance & Reports in One Dashboard",
     tagline: "One system. Zero paperwork. Full control.",
+    h1: "Zavia Case Study: Custom Restaurant Management System (Orders, Kitchen, Inventory & Finance)",
+    metaTitle: "Zavia Case Study | Custom Restaurant Management SaaS Development",
+    metaDescription:
+      "How Pixnix Digital built Zavia, a complete restaurant management system covering orders, kitchen, inventory, finance, and reports in one dashboard. React, Node.js, MongoDB.",
+    keywords:
+      "restaurant management system development, custom SaaS development case study, restaurant software development company, order and inventory management system, MERN stack development agency",
     url: "https://zavia-black.vercel.app/",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "MERN Stack", "Vercel"],
     thumb: "#1a0a0a",
@@ -262,6 +292,12 @@ const caseStudies = [
     headline:
       "AI-Powered Lead Management That Captures, Replies, Follows Up & Qualifies: Without a Single Human Touch",
     tagline: "Leads in. AI handles the rest.",
+    h1: "LeadPilot Case Study: AI-Powered Lead Management & Automation System",
+    metaTitle: "LeadPilot Case Study | AI Automation for Lead Management",
+    metaDescription:
+      "How Pixnix Digital built LeadPilot, an AI-powered lead management system that captures, replies to, follows up with, and qualifies leads automatically with no human touch required.",
+    keywords:
+      "AI lead management system, AI automation case study, lead qualification automation, AI-powered CRM automation, business process automation agency, AI lead capture system",
     url: "https://lead-buddy-bot-12.lovable.app/",
     tech: [
       "AI Automation",

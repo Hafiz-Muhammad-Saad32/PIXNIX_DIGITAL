@@ -5,6 +5,7 @@ import { services } from "../hooks/servicesData"
 import SectionChip from "../components/common/SectionChip"
 import ServiceCard from "../components/ServiceCard"
 import ServiceModal from "../components/ServiceModal"
+import SEO from "../components/common/SEO"
 
 const Services = () => {
   const navigate = useNavigate()
@@ -30,8 +31,42 @@ const Services = () => {
     navigate("/services")
   }
 
+  const HeadingTag = selectedService ? "h2" : "h1"
+
   return (
     <section className="bg-dark-base min-h-screen py-24 md:py-32 px-4">
+
+      <SEO
+        title={selectedService ? selectedService.metaTitle : "Digital Agency Services | Web, App, AI & Marketing"}
+        description={
+          selectedService
+            ? selectedService.metaDescription
+            : "Explore Pixnix Digital's full-stack agency services: website development, mobile apps, AI chatbots, AI automation, SEO, branding, graphic design, video editing and social media management."
+        }
+        keywords={
+          selectedService
+            ? selectedService.keywords
+            : "digital agency services, website development services, mobile app development, AI chatbot development, AI automation services, SEO services, branding and marketing agency, graphic design services, video editing services, social media management"
+        }
+        path={selectedService ? `/services/${selectedService.id}` : "/services"}
+        jsonLd={
+          selectedService
+            ? {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                serviceType: selectedService.title,
+                name: selectedService.h1,
+                description: selectedService.metaDescription,
+                provider: {
+                  "@type": "Organization",
+                  name: "Pixnix Digital",
+                  url: "https://pixnixdigital.com",
+                },
+                areaServed: "Worldwide",
+              }
+            : null
+        }
+      />
 
       <div className="max-w-7xl mx-auto">
 
@@ -43,13 +78,13 @@ const Services = () => {
             What We Do
           </SectionChip>
 
-          <h1 className="text-4xl md:text-6xl font-black mt-5 mb-6">
+          <HeadingTag className="text-4xl md:text-6xl font-black mt-5 mb-6">
             Services That
             <span className="gradient-text-pink">
               {" "}Actually Move
             </span>
             {" "}the Needle
-          </h1>
+          </HeadingTag>
 
           <p className="text-text-light text-lg leading-relaxed">
             We cover the full creative and digital stack.

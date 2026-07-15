@@ -3,6 +3,12 @@ export const services = [
     id: "website-development",
     icon: "💻",
     title: "Website Development",
+    h1: "Website Development Services That Turn Visitors Into Clients",
+    metaTitle: "Website Development Services | Custom, Fast & SEO-Ready Sites",
+    metaDescription:
+      "Custom website development services for businesses, startups and e-commerce brands. Fast-loading, mobile-first, SEO-optimized websites built to convert visitors into clients. Get a free quote.",
+    keywords:
+      "website development services, custom website design, e-commerce website development, business website development company, responsive web design agency, WordPress development services, Shopify website development, professional website developer Pakistan, React.js development company, Next.js development agency, custom web application development",
     subtitle:
       "Fast, conversion-focused websites engineered to load fast, rank on Google, and turn visitors into clients.",
     description:
@@ -75,6 +81,12 @@ export const services = [
     id: "mobile-app-development",
     icon: "📱",
     title: "Mobile App Development",
+    h1: "Mobile App Development Services for iOS, Android & Cross-Platform",
+    metaTitle: "Mobile App Development Company | iOS, Android & Flutter Apps",
+    metaDescription:
+      "Native and cross-platform mobile app development services. iOS, Android, Flutter and React Native apps built from idea and MVP to App Store launch. Book a free consultation.",
+    keywords:
+      "mobile app development services, iOS app development company, Android app development agency, cross platform app development, Flutter app development company, React Native app development, MVP app development services, enterprise app development company, startup app development agency",
     subtitle:
       "Native and cross-platform iOS/Android apps built from idea to App Store launch.",
     description:
@@ -147,6 +159,12 @@ export const services = [
     id: "ai-chatbot-development",
     icon: "🤖",
     title: "AI Chatbot Development",
+    h1: "AI Chatbot Development Services for 24/7 Sales & Support",
+    metaTitle: "AI Chatbot Development Company | Custom GPT-Powered Chatbots",
+    metaDescription:
+      "Custom AI chatbot development for lead generation, customer support and sales. WhatsApp, Messenger and website chatbots powered by GPT. Automate your business 24/7.",
+    keywords:
+      "AI chatbot development services, custom GPT chatbot development, WhatsApp chatbot development, AI customer support chatbot, lead generation chatbot agency, conversational AI development company, AI calling agent development, AI voice agent for business",
     subtitle: "Intelligent AI chatbots that automate support, capture leads, and sell — 24/7.",
     description:
       "Imagine never missing a customer inquiry again — at 2am, on weekends, or during your busiest hours. That's what a properly built AI chatbot does for your business. We design and develop intelligent, conversational AI chatbots that handle support, qualify leads, and drive sales around the clock — chatbots that feel less like robots and more like an always-on member of your team.",
@@ -215,6 +233,12 @@ export const services = [
     id: "ai-automation",
     icon: "⚙️",
     title: "AI Automation",
+    h1: "AI Automation Services & Custom Workflow Automation",
+    metaTitle: "AI Automation Agency | Custom Workflow & Business Process Automation",
+    metaDescription:
+      "Custom AI automation services for sales, CRM, content and operations, including fully autonomous AI social media posting. Cut manual work and scale faster.",
+    keywords:
+      "AI automation agency, business process automation services, workflow automation company, AI automation for small business, custom AI automation, AI social media automation, CRM automation services, n8n automation agency, Zapier and Make.com automation services",
     subtitle:
       "Advanced, fully custom AI automation — including a social media engine that creates, designs, and posts on its own.",
     description:
@@ -288,6 +312,12 @@ export const services = [
     id: "seo-services",
     icon: "📈",
     title: "SEO Services",
+    h1: "SEO Services That Rank You on Page One of Google",
+    metaTitle: "SEO Services Company | On-Page, Technical & Local SEO",
+    metaDescription:
+      "Data-driven SEO services to rank higher on Google. On-page SEO, technical SEO, local SEO and link building for measurable, long-term organic growth.",
+    keywords:
+      "SEO services company, SEO agency, search engine optimization services, technical SEO services, local SEO services, ecommerce SEO agency, link building services, on-page SEO optimization, AI search optimization services, generative engine optimization agency",
     subtitle: "Data-driven SEO that ranks you on page one and keeps you there.",
     description:
       "Ranking on Google isn't optional anymore — it's survival. If your business isn't on page one, your competitors are capturing the customers who should be yours. We deliver data-driven SEO strategies that move your website up the rankings and keep it there, with proven results across competitive industries where rankings directly translate to revenue.",
@@ -358,6 +388,12 @@ export const services = [
     id: "branding-marketing",
     icon: "🎯",
     title: "Branding & Marketing",
+    h1: "Branding & Marketing Services That Build Trust and Drive Growth",
+    metaTitle: "Branding & Marketing Agency | Brand Strategy & Identity Design",
+    metaDescription:
+      "Full-service branding and marketing agency. Brand strategy, visual identity, messaging, and multi-channel marketing campaigns that position your business as the obvious choice. Get a free brand audit.",
+    keywords:
+      "branding agency, brand strategy services, visual identity design agency, brand marketing agency, logo and brand identity design, marketing strategy development company, brand positioning services",
     subtitle: "Brand identities and marketing strategies that position you as the obvious choice.",
     description:
       "In a crowded market, the brands that win aren't always the best — they're the most memorable. We craft brand identities and marketing strategies that position your business as the obvious choice in your industry, building brands that don't just look good — they build trust and drive measurable growth.",
@@ -424,6 +460,12 @@ export const services = [
     id: "graphic-designing",
     icon: "🎨",
     title: "Graphic Designing",
+    h1: "Graphic Design Services for Brands That Want to Stand Out",
+    metaTitle: "Graphic Design Agency | Logo, Branding & Marketing Design",
+    metaDescription:
+      "Professional graphic design services: logo design, brand identity, marketing collateral, social media graphics, and ad creatives. Strategic visuals that move your business forward.",
+    keywords:
+      "graphic design agency, logo design services, brand identity design company, social media graphics design, marketing collateral design, digital ad creative design, packaging design services",
     subtitle: "Sharp, strategic visuals — from logos to marketing materials.",
     description:
       "Good design isn't decoration — it's communication. Every graphic your business puts out is either building trust or quietly damaging it. Our graphic design team creates visuals that are sharp, strategic, and unmistakably on-brand, delivering work that holds up against any agency, designed to actually move your business forward.",
@@ -490,6 +532,12 @@ export const services = [
     id: "video-editing-3d-animation",
     icon: "🎬",
     title: "Video Editing & 3D Animation",
+    h1: "Video Editing & 3D Animation Services for Brands and Products",
+    metaTitle: "Video Editing & 3D Animation Company | Motion Graphics Agency",
+    metaDescription:
+      "Cinematic video editing, 3D animation, and motion graphics services for ads, product visualization, and social media content. Professional editing that holds attention and drives action.",
+    keywords:
+      "video editing agency, 3D animation company, motion graphics services, product visualization 3D rendering, social media video editing, corporate explainer video production, video production agency",
     subtitle: "Cinematic video editing and 3D animation that hold attention and drive action.",
     description:
       "Video isn't just content anymore — it's currency. Whether it's a product launch, a brand story, or a scroll-stopping ad, our video editing and 3D animation team creates visuals that hold attention and drive action — from fast-paced social edits to detailed 3D product visualizations.",
@@ -556,6 +604,12 @@ export const services = [
     id: "social-media-management",
     icon: "📲",
     title: "Social Media Management",
+    h1: "Social Media Management Services That Build Real Audiences",
+    metaTitle: "Social Media Management Agency | Content, Strategy & Growth",
+    metaDescription:
+      "Strategic social media management: content planning, creation, scheduling, community engagement, and paid social advertising. Build an engaged audience that converts into customers.",
+    keywords:
+      "social media management agency, social media marketing services, content creation for social media, paid social advertising agency, community management services, social media strategy company",
     subtitle: "Strategic content, scheduling, and engagement that builds real audiences.",
     description:
       "Posting randomly isn't a social media strategy — it's noise. We manage social media accounts with the same strategic rigor as any other marketing channel: content built around your audience, scheduled with intent, and tracked against real business goals, helping brands build engaged communities that convert into customers, not just vanity metrics.",

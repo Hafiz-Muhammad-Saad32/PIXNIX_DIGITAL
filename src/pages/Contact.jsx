@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { useState } from 'react'
 import ScrollReveal from '../components/animations/ScrollReveal'
 import SectionChip from '../components/common/SectionChip'
+import SEO from '../components/common/SEO'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -95,14 +96,20 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-base bg-dark-base2 py-20 md:py-28 px-4 md:px-8">
+      <SEO
+        title="Contact Pixnix Digital | Get a Free Quote for Your Project"
+        description="Get in touch with Pixnix Digital for web development, branding, AI automation, and digital marketing services. Book a free strategy call or WhatsApp us — we respond fast with a clear quote within 24 hours."
+        keywords="contact Pixnix Digital, get a website quote, hire a digital agency, book a free consultation, web development agency contact, digital marketing agency Pakistan contact"
+        path="/contact"
+      />
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <div className="mb-8 text-center">
             <SectionChip className='bg-black'>Get In Touch</SectionChip>
 
-            <h2 className="font-black text-4xl md:text-5xl leading-tight mb-3 mt-3">
+            <h1 className="font-black text-4xl md:text-5xl leading-tight mb-3 mt-3">
               Let's Build Something Creative Together
-            </h2>
+            </h1>
 
             <p className="text-text-light max-w-2xl mx-auto">
               Have a project in mind? Want to know what's possible for your brand? Drop us a message we respond fast.

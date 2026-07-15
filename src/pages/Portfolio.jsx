@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import caseStudies from '../hooks/caseStudies'
 import CaseStudyModal from '../components/CaseStudyModal'
+import SEO from '../components/common/SEO'
 
 // ─── Derive categories from data (single source of truth) ────
 const CATEGORIES = ['All', ...Array.from(new Set(caseStudies.map((p) => p.cat)))]
@@ -239,6 +240,8 @@ const Portfolio = () => {
       ? caseStudies
       : caseStudies.filter((p) => p.cat === activeFilter)
 
+  const PortfolioHeadingTag = selectedCaseStudy ? motion.h2 : motion.h1
+
   return (
     <motion.main
       variants={pageVariants}
@@ -248,6 +251,37 @@ const Portfolio = () => {
       className="relative min-h-screen bg-[#06090b] pt-24 pb-20 px-4 md:px-8 overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
+      <SEO
+        title={selectedCaseStudy ? selectedCaseStudy.metaTitle : "Portfolio | Web, App & AI Projects We've Delivered"}
+        description={
+          selectedCaseStudy
+            ? selectedCaseStudy.metaDescription
+            : "Browse Pixnix Digital's portfolio of delivered projects: SaaS platforms, e-commerce stores, AI chatbots, business websites, and automation systems built for real brands."
+        }
+        keywords={
+          selectedCaseStudy
+            ? selectedCaseStudy.keywords
+            : "digital agency portfolio, web development case studies, SaaS development case studies, e-commerce development portfolio, AI automation case studies"
+        }
+        path={selectedCaseStudy ? `/portfolio/${selectedCaseStudy.id}` : "/portfolio"}
+        jsonLd={
+          selectedCaseStudy
+            ? {
+                "@context": "https://schema.org",
+                "@type": "CreativeWork",
+                name: selectedCaseStudy.name,
+                headline: selectedCaseStudy.h1,
+                description: selectedCaseStudy.metaDescription,
+                creator: {
+                  "@type": "Organization",
+                  name: "Pixnix Digital",
+                  url: "https://pixnixdigital.com",
+                },
+                about: selectedCaseStudy.cat,
+              }
+            : null
+        }
+      />
       {/* GLOW ANIMATIONS (Imported from 3rd HTML file) */}
       <motion.div
         className="pointer-events-none fixed left-[5%] top-[-150px] z-0 h-[500px] w-[500px] rounded-full bg-[#ec1a8d] opacity-25 blur-[120px]"
@@ -272,7 +306,7 @@ const Portfolio = () => {
             Portfolio
           </motion.p>
 
-          <motion.h1
+          <PortfolioHeadingTag
             id="portfolio-heading"
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
@@ -281,7 +315,7 @@ const Portfolio = () => {
           >
             <span className="gradient-text-teal">Projects </span>
             That Speak for Themselves
-          </motion.h1>
+          </PortfolioHeadingTag>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}

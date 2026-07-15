@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import ScrollReveal from '../components/animations/ScrollReveal'
 import SectionChip from '../components/common/SectionChip'
 import PinkGlobeBackground from '../components/animations/PinkGlobeBackground'
+import SEO from '../components/common/SEO'
 
 const ValueCard = ({ icon, title, description }) => {
   return (
@@ -167,6 +168,12 @@ const About = () => {
      overflow-hidden
    "
     >
+      <SEO
+        title="About Pixnix Digital | Creative Digital Agency Team & Story"
+        description="Meet Pixnix Digital — a full-stack creative digital agency specializing in web development, branding, AI automation and marketing. Learn our story, values, and the senior specialists behind 150+ delivered projects."
+        keywords="about Pixnix Digital, creative digital agency team, digital agency Pakistan, web development agency story, branding and marketing specialists, AI automation agency team"
+        path="/about"
+      />
       {/* Globe sits fixed behind the whole section, visible while this section is on screen */}
       <PinkGlobeBackground />
 
@@ -180,7 +187,7 @@ const About = () => {
               Who We Are
             </SectionChip>
 
-            <h2
+            <h1
               className="
             font-black
             text-2xl
@@ -190,13 +197,13 @@ const About = () => {
             mb-6
           "
             >
-              We're Not Just an Agency.
+              We're Not Just a Digital Agency.
               <br />
               We're Your
               <span className="gradient-text-pink">
-                {' '}Creative Partner
+                {' '}Creative Growth Partner
               </span>
-            </h2>
+            </h1>
 
             <p
               className="
@@ -288,7 +295,7 @@ const About = () => {
               Why Choose Pixnix
             </SectionChip>
 
-            <h3
+            <h2
               className="
             text-3xl
             md:text-5xl
@@ -300,7 +307,7 @@ const About = () => {
               <span className="gradient-text-pink">
                 {' '}Real Growth
               </span>
-            </h3>
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -323,7 +330,7 @@ const About = () => {
               Leadership
             </SectionChip>
 
-            <h3
+            <h2
               className="
             text-3xl
             md:text-5xl
@@ -335,7 +342,7 @@ const About = () => {
                 The Founder
               </span>
               {' '}Diving The Vision.
-            </h3>
+            </h2>
 
           </div>
 
@@ -367,7 +374,7 @@ const About = () => {
               Core Team
             </SectionChip>
 
-            <h3
+            <h2
               className="
             text-3xl
             md:text-5xl
@@ -379,7 +386,7 @@ const About = () => {
                 {' '}Senior Specialists
               </span>
               , Built To Deliver.
-            </h3>
+            </h2>
 
             <p
               className="

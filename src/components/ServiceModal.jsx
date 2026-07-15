@@ -133,12 +133,12 @@ const ServiceModal = ({ service, onClose }) => {
               <span className="text-primary-pink text-xs font-bold uppercase tracking-widest block mb-2">
                 Service
               </span>
-              <h2
+              <h1
                 id="service-modal-title"
                 className="text-2xl md:text-4xl font-black leading-tight"
               >
-                {service.title}
-              </h2>
+                {service.h1 || service.title}
+              </h1>
             </div>
           </div>
 

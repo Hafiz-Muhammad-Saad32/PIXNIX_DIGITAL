@@ -66,9 +66,9 @@ export default function CaseStudyModal({ caseStudy, onClose }) {
                 {caseStudy.cat}
               </span>
 
-              <h2 className="mb-2.5 text-[26px] leading-[1.2] text-[#f5f6f7] max-[560px]:text-lg">
-                {caseStudy.headline}
-              </h2>
+              <h1 className="mb-2.5 text-[26px] leading-[1.2] text-[#f5f6f7] max-[560px]:text-lg">
+                {caseStudy.h1 || caseStudy.headline}
+              </h1>
 
               <p className="mb-5 text-[15px] text-[#a6adb3] max-[560px]:text-[13.5px]">
                 {caseStudy.tagline}
